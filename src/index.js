@@ -6,8 +6,8 @@ import App from "./App";
 
 const config = {
   projectId: "",
-  theme: "dark",
-  accentColor: "default",
+  theme: "light",
+  accentColor: "teal",
   ethereum: {
     appName: "web3Modal",
   },
