@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import { Web3Modal } from "@web3modal/react";
 import "./index.css";

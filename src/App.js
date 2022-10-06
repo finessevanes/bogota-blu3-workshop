@@ -1,5 +1,5 @@
 import { ConnectButton, useAccount } from '@web3modal/react'
-import {AppStyle} from './styles'
+import { AppStyle } from './styles'
 import Profile from './Profile'
 
 function App() {

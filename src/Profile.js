@@ -21,18 +21,19 @@ import {
   BioStyle
 } from "./styles";
 
-function Message() {
+function Profile() {
   const disconnect = useDisconnect();
   const { address: userAddress } = useAccount();
-
   const {
     data: ensName,
     isLoading: isLoadingEnsName
   } = useEnsName({
     address: userAddress,
   });
-
-  const { data: avatarImage, isLoading: isLoadingAvatarImage } = useEnsAvatar({
+  const { 
+    data: avatarImage, 
+    isLoading: isLoadingAvatarImage 
+  } = useEnsAvatar({
     addressOrName: userAddress,
   });
 
@@ -82,4 +83,4 @@ function Message() {
   );
 }
 
-export default Message;
+export default Profile;
