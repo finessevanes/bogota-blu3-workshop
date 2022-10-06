@@ -1,11 +1,4 @@
 import {
-  useAccount,
-  useEnsAvatar,
-  useEnsName,
-  useDisconnect,
-} from "@web3modal/react";
-
-import {
   DisconnectBtnStyle,
   ProfileCardStyle,
   AvatarStyle,
@@ -22,20 +15,8 @@ import {
 } from "./styles";
 
 function Profile() {
-  const disconnect = useDisconnect();
-  const { address: userAddress } = useAccount();
-  const { data: ensName, isLoading: isLoadingEnsName } = useEnsName({
-    address: userAddress,
-  });
-  const { data: avatarImage, isLoading: isLoadingAvatarImage } = useEnsAvatar({
-    addressOrName: userAddress,
-  });
-
   return (
     <div className={ContainerStyle}>
-      {avatarImage === undefined || isLoadingAvatarImage || isLoadingEnsName ? (
-        <h1>Loading</h1>
-      ) : (
         <div className={ProfileContainerStyle}>
           <div className={ProfileCardStyle}>
             <img
@@ -44,16 +25,12 @@ function Profile() {
             />
             <div className={AvatarContainer}>
               <img
-                src={
-                  avatarImage === null
-                    ? "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"
-                    : avatarImage
-                }
+                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"
                 className={AvatarStyle}
               />
             </div>
             <div className={BioContainer}>
-              <h3 className={EnsNameStyle}>{ensName}</h3>
+              <h3 className={EnsNameStyle}></h3>
               <p className={BioStyle}>hello, i'm vanes and i like to run</p>
             </div>
             <div className={DetailsConatinerStyle}>
@@ -68,7 +45,6 @@ function Profile() {
             </div>
           </div>
         </div>
-      )}
     </div>
   );
 }
