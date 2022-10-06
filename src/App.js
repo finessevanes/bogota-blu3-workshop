@@ -1,7 +1,12 @@
+import { ConnectButton, useAccount } from '@web3modal/react'
+import Message from './Message'
+
 function App() {
+  const { isConnected } = useAccount()
+
   return (
-    <div className="App">
-      <p class="text-sm">The quick brown fox ...</p>
+    <div>
+      { isConnected ? <Message /> : <ConnectButton />}
     </div>
   );
 }
