@@ -1,12 +1,13 @@
 import { ConnectButton, useAccount } from '@web3modal/react'
-import Message from './Message'
+import {AppStyle} from './styles'
+import Profile from './Profile'
 
 function App() {
   const { isConnected } = useAccount()
 
   return (
-    <div className='flex justify-center items-center min-h-screen'>
-      { isConnected ? <Message /> : <div><ConnectButton /></div>}
+    <div className={AppStyle}>
+      { isConnected ? <Profile /> : <div><ConnectButton /></div>}
     </div>
   );
 }
