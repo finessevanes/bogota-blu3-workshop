@@ -18,7 +18,7 @@ import {
   BgImageStyle,
   AvatarContainer,
   BioContainer,
-  BioStyle
+  BioStyle,
 } from "./styles";
 
 function Profile() {
@@ -37,6 +37,13 @@ function Profile() {
         <h1>Loading</h1>
       ) : (
         <div className={ProfileContainerStyle}>
+          <button
+            onClick={disconnect}
+            type="button"
+            className={DisconnectBtnStyle}
+          >
+            Disconnect
+          </button>
           <div className={ProfileCardStyle}>
             <img
               src="https://i.ibb.co/TW3bPTc/Medium-Background.jpg"
