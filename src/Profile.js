@@ -24,16 +24,10 @@ import {
 function Profile() {
   const disconnect = useDisconnect();
   const { address: userAddress } = useAccount();
-  const {
-    data: ensName,
-    isLoading: isLoadingEnsName
-  } = useEnsName({
+  const { data: ensName, isLoading: isLoadingEnsName } = useEnsName({
     address: userAddress,
   });
-  const { 
-    data: avatarImage, 
-    isLoading: isLoadingAvatarImage 
-  } = useEnsAvatar({
+  const { data: avatarImage, isLoading: isLoadingAvatarImage } = useEnsAvatar({
     addressOrName: userAddress,
   });
 
@@ -43,15 +37,13 @@ function Profile() {
         <h1>Loading</h1>
       ) : (
         <div className={ProfileContainerStyle}>
-          <div>
-            <button
-              onClick={disconnect}
-              type="button"
-              className={DisconnectBtnStyle}
-            >
-              Disconnect
-            </button>
-          </div>
+          <button
+            onClick={disconnect}
+            type="button"
+            className={DisconnectBtnStyle}
+          >
+            Disconnect
+          </button>
           <div className={ProfileCardStyle}>
             <img
               src="https://i.ibb.co/TW3bPTc/Medium-Background.jpg"
@@ -62,9 +54,7 @@ function Profile() {
             </div>
             <div className={BioContainer}>
               <h3 className={EnsNameStyle}>{ensName}</h3>
-              <p className={BioStyle}>
-                hello, i'm vanes and i like to run
-              </p>
+              <p className={BioStyle}>hello, i'm vanes and i like to run</p>
             </div>
             <div className={DetailsConatinerStyle}>
               <div className={PhotosConatinerStyle}>
