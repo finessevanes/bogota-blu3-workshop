@@ -37,20 +37,20 @@ function Profile() {
         <h1>Loading</h1>
       ) : (
         <div className={ProfileContainerStyle}>
-          <button
-            onClick={disconnect}
-            type="button"
-            className={DisconnectBtnStyle}
-          >
-            Disconnect
-          </button>
           <div className={ProfileCardStyle}>
             <img
               src="https://i.ibb.co/TW3bPTc/Medium-Background.jpg"
               className={BgImageStyle}
             />
             <div className={AvatarContainer}>
-              <img src={avatarImage} className={AvatarStyle} />
+              <img
+                src={
+                  avatarImage === null
+                    ? "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"
+                    : avatarImage
+                }
+                className={AvatarStyle}
+              />
             </div>
             <div className={BioContainer}>
               <h3 className={EnsNameStyle}>{ensName}</h3>
