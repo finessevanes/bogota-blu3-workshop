@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./App";
 
 const config = {
-  projectId: "",
+  projectId: "9338b83ff89083cd0ee7da8cea475c23",
   theme: "light",
   accentColor: "teal",
   ethereum: {

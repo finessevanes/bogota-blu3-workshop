@@ -5,8 +5,8 @@ function App() {
   const { isConnected } = useAccount()
 
   return (
-    <div>
-      { isConnected ? <Message /> : <ConnectButton />}
+    <div className='flex justify-center items-center min-h-screen'>
+      { isConnected ? <Message /> : <div><ConnectButton /></div>}
     </div>
   );
 }
